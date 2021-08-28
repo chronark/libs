@@ -3,7 +3,7 @@ import {EnvironmentVariableNotFoundError} from "./error";
  * Load an environment variable.
  * Returns the fallback if not found.
  */
-export function loadEnv(key: string, fallback?: string): string | undefined {
+export function getEnv(key: string, fallback?: string): string | undefined {
 	return process.env[key] ?? fallback;
 }
 

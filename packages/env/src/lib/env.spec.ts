@@ -1,13 +1,13 @@
-import { loadEnv, requireEnv } from './env';
+import { getEnv, requireEnv } from './env';
 import { EnvironmentVariableNotFoundError } from './error';
 
-describe('loadEnv()', () => {
+describe('getEnv()', () => {
   describe('when the variable exists', () => {
     it('returns the variable', () => {
       const key = `TEST_KEY_${Math.random().toFixed(8)}`;
       const value = 'value';
       process.env[key] = value;
-      expect(loadEnv(key)).toEqual(value);
+      expect(getEnv(key)).toEqual(value);
     });
   });
 
@@ -16,7 +16,7 @@ describe('loadEnv()', () => {
       it('returns the fallback value', () => {
         const key = `TEST_KEY_${Math.random().toFixed(8)}`;
 
-        expect(loadEnv(key, 'fallback')).toEqual('fallback');
+        expect(getEnv(key, 'fallback')).toEqual('fallback');
       });
     });
 
@@ -24,7 +24,7 @@ describe('loadEnv()', () => {
       it('returns undefined', () => {
         const key = `TEST_KEY_${Math.random().toFixed(8)}`;
 
-        expect(loadEnv(key)).toBe(undefined);
+        expect(getEnv(key)).toBe(undefined);
       });
     });
   });

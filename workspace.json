@@ -90,7 +90,7 @@
           "options": {
             "commands": [
               {
-                "command": "npm publish ./dist/packages/idGenerator"
+                "command": "npm publish ./dist/packages/prefixed-id"
               }
             ]
           }

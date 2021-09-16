@@ -8,32 +8,24 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/env",
             "tsConfig": "packages/env/tsconfig.lib.json",
             "packageJson": "packages/env/package.json",
             "main": "packages/env/src/index.ts",
-            "assets": [
-              "packages/env/*.md"
-            ]
+            "assets": ["packages/env/*.md"]
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/env/**/*.ts"
-            ]
+            "lintFilePatterns": ["packages/env/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/env"
-          ],
+          "outputs": ["coverage/packages/env"],
           "options": {
             "jestConfig": "packages/env/jest.config.js",
             "passWithNoTests": true
@@ -51,6 +43,54 @@
             "commands": [
               {
                 "command": "npm publish ./dist/packages/env"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "prefixed-id": {
+      "root": "packages/prefixed-id",
+      "sourceRoot": "packages/prefixed-id/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/prefixed-id",
+            "tsConfig": "packages/prefixed-id/tsconfig.lib.json",
+            "packageJson": "packages/prefixed-id/package.json",
+            "main": "packages/prefixed-id/src/index.ts",
+            "assets": ["packages/prefixed-id/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/prefixed-id/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/prefixed-id"],
+          "options": {
+            "jestConfig": "packages/prefixed-id/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": false
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npm publish ./dist/packages/idGenerator"
               }
             ]
           }

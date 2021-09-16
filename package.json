@@ -4,14 +4,17 @@
   "license": "MIT",
   "scripts": {
     "cz": "cz",
-    "version":"nx affected --target=version",
+    "fmt": "pnpm lint && pnpm prettier --loglevel=warn --write .",
+    "lint": "nx workspace-lint && nx run-many --target=lint --all",
+    "version": "nx affected --target=version",
     "build": "nx affected --target=build",
     "release": "nx affected --target=publish",
     "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",

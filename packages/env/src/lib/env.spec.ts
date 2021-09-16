@@ -45,7 +45,9 @@ describe('requireEnv()', () => {
     it('throws', () => {
       const key = `TEST_KEY_${Math.random().toFixed(8)}`;
 
-      expect(()=>requireEnv(key)).toThrowError(EnvironmentVariableNotFoundError);
+      expect(() => requireEnv(key)).toThrowError(
+        EnvironmentVariableNotFoundError
+      );
     });
   });
 });

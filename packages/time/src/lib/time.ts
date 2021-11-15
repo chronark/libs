@@ -55,7 +55,7 @@ export class Time {
   }
 
   add(duration: Duration): Time {
-    return Time.unixMilli(this.millisecond + duration.milliseconds);
+    return Time.unixMilli(this.unixMilli + duration.milliseconds);
   }
   addDate(years: number, months: number, days: number): Time {
     const t = new Date(this.unixMilli);
@@ -93,7 +93,11 @@ export class Time {
   }
   // format(format: string): string {}
 
-  get millisecond(): number {
+  get unix(): number {
+    return Math.floor(this.unixMilli / 1000);
+  }
+
+  get ms(): number {
     return new Date(this.unixMilli).getUTCMilliseconds();
   }
   get second(): number {
@@ -136,10 +140,10 @@ export class Time {
    * Returns the time formatted as `YYYY-MM-DDTHH:mm:ss.sssZ` (ISO-8601)
    */
   toString(): string {
-    return new Date(this.millisecond).toISOString();
+    return new Date(this.unixMilli).toISOString();
   }
   sub(duration: Duration): Time {
-    return Time.unixMilli(this.millisecond - duration.milliseconds);
+    return Time.unixMilli(this.unixMilli - duration.milliseconds);
   }
   subDate(years: number, months: number, days: number): Time {
     const t = new Date(this.unixMilli);

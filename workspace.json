@@ -42,7 +42,7 @@
           "options": {
             "commands": [
               {
-                "command": "npm publish ./dist/packages/env"
+                "command": "yarn publish ./dist/packages/env --access=public"
               }
             ]
           }
@@ -90,7 +90,7 @@
           "options": {
             "commands": [
               {
-                "command": "npm publish ./dist/packages/prefixed-id"
+                "command": "yarn publish ./dist/packages/prefixed-id --access=public"
               }
             ]
           }
@@ -138,7 +138,7 @@
           "options": {
             "commands": [
               {
-                "command": "npm publish ./dist/packages/time"
+                "command": "yarn publish ./dist/packages/time --access=public"
               }
             ]
           }

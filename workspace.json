@@ -126,6 +126,22 @@
             "jestConfig": "packages/time/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": false
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npm publish ./dist/packages/time"
+              }
+            ]
+          }
         }
       }
     }

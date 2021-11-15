@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@chronark/env": ["packages/env/src/index.ts"],
-      "@chronark/prefixed-id": ["packages/prefixed-id/src/index.ts"]
+      "@chronark/prefixed-id": ["packages/prefixed-id/src/index.ts"],
+      "@chronark/time": ["packages/time/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

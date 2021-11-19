@@ -6,9 +6,9 @@
     "cz": "cz",
     "fmt": "pnpm lint && pnpm prettier --loglevel=warn --write .",
     "lint": "nx workspace-lint && nx run-many --target=lint --all",
-    "bump": "nx affected --target=version",
+    "bump": "nx run-many --target=version --all",
     "build": "nx run-many --target=build --all",
-    "release": "nx affected --target=publish",
+    "release": "nx run-many --target=publish --all",
     "prepare": "husky install"
   },
   "private": true,

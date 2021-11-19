@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+import { randomBytes, randomUUID } from 'crypto';
 
 /**
  * Generate ids similar to stripe
@@ -15,11 +15,24 @@ export class IdGenerator<TPrefixes extends string> {
   }
 
   /**
-   * Generate a new unique id with a defined prefix
+   * Generate a new unique base64 encoded uuid with a defined prefix
    *
    * @returns xxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    */
   public id(prefix: TPrefixes): string {
-    return [this.prefixes[prefix], uuid().replace(/-/g, '')].join('_');
+    return [
+      this.prefixes[prefix],
+      Buffer.from(randomUUID().replace(/-/g, ''), 'hex').toString('base64'),
+    ].join('_');
+  }
+  /**
+   * Generate a new random base64 encoded secret with a defined prefix
+   *
+   * @returns xxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   */
+  public secret(prefix: TPrefixes, bytes = 64): string {
+    return [this.prefixes[prefix], randomBytes(bytes).toString('base64')].join(
+      '_'
+    );
   }
 }

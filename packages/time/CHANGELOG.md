@@ -4,12 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.1.1](https://github.com/chronark/libs/compare/time-0.1.0...time-0.1.1) (2021-11-19)
 
-
 ### Bug Fixes
 
-* release ([08d2e7b](https://github.com/chronark/libs/commit/08d2e7b5b37c695f7251c3223486fe1af755eab6))
-
-
+- release ([08d2e7b](https://github.com/chronark/libs/commit/08d2e7b5b37c695f7251c3223486fe1af755eab6))
 
 # 0.1.0 (2021-11-15)
 

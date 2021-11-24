@@ -6,6 +6,7 @@
     "cz": "cz",
     "fmt": "pnpm lint && pnpm prettier --loglevel=warn --write .",
     "lint": "nx workspace-lint && nx run-many --target=lint --all",
+    "test": "nx run-many --target=test --all",
     "bump": "nx run-many --target=version --all",
     "build": "nx run-many --target=build --all",
     "release": "nx run-many --target=publish --all",

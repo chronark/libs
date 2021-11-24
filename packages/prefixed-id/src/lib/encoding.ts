@@ -7,7 +7,6 @@ export function encodeBase58(buf: Buffer): string {
   let carry = 0;
 
   for (let i = 0; i < buf.length; i++) {
-    console.log(buf[i]);
     if (i > 0 && carry === 0) {
       break;
     }
@@ -24,7 +23,6 @@ export function encodeBase58(buf: Buffer): string {
     bytes.push(carry % 58);
     carry = Math.floor(carry / 58);
   }
-  console.log({ zeroCounter, bytes });
   return [
     ...new Array(zeroCounter).fill('1'),
     ...bytes.map((byte) => alphabet[byte]),

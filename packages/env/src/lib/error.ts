@@ -1,7 +1,7 @@
 export class EnvironmentVariableNotFoundError extends Error {
   public readonly variableName: string;
   /**
-   * @param name - The name of the environment variable
+   * @param name - The name of the environment variable.
    */
   constructor(name: string) {
     super(`Environment variable "${name}" not found.`);

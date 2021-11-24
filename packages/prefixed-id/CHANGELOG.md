@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://github.com/chronark/libs/compare/prefixed-id-0.3.0...prefixed-id-0.3.1) (2021-11-24)
+
+
+
 # [0.3.0](https://github.com/chronark/libs/compare/prefixed-id-0.2.0...prefixed-id-0.3.0) (2021-11-24)
 
 ### Features

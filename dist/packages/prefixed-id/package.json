@@ -1,0 +1,10 @@
+{
+  "name": "@chronark/prefixed-id",
+  "version": "0.3.8",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "dependencies": {
+    "base-x": "^3.0.9"
+  },
+  "peerDependencies": {}
+}

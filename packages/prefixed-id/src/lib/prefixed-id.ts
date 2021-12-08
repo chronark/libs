@@ -35,3 +35,5 @@ export class IdGenerator<TPrefixes extends string> {
     return [this.prefixes[prefix], encodeBase58(randomBytes(bytes))].join('_');
   }
 }
+
+new IdGenerator({ user: 'u' }).id('user');
